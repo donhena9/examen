@@ -10,9 +10,6 @@ body {
     padding: 27px 20px 0 20px;
 
 }
-.header {
-
-}
 .title {
     font-family: 'Oleo Script', cursive;
     font-size: 40pt;
@@ -99,4 +96,15 @@ body {
     font-size: 10pt;
     font-family: Arial, sans-serif;
     color: #aaaaaa;
+}
+.content {
+    height: 347px;
+    background-color: #ffc552;
+}
+.content_about {
+    float: right;
+    height: 145px;
+    margin-top: 85px;
+    margin-right: 71px;
+    background-color: #dddddd;
 }
