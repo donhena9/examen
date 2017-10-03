@@ -53,6 +53,9 @@ body {
     color: #666666;
 }
 .menu_link {
+    color: #666666;
+}
+.menu_link {
     text-decoration: none;
 }
 .menu_item_apply {
@@ -60,6 +63,9 @@ body {
     color: #ffffff;
 }
 .menu_link_apply:visited {
+    color: #ffffff;
+}
+.menu_link_apply {
     color: #ffffff;
 }
 .submenu {
@@ -82,6 +88,9 @@ body {
 }
 .submenu_link {
     text-decoration: none;
+}
+.submenu_link:link {
+    color: #666666;
 }
 .submenu_link:visited {
     color: #666666;
