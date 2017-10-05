@@ -182,7 +182,7 @@ body {
     height: 49px;
     width: 32px;
     left: 5px;
-    background-image: url("images/overlay_left.svg");
+    background-image: url("images/left.svg");
     background-color: transparent;
     background-size: cover;
     background-position: -10px;
@@ -191,7 +191,7 @@ body {
     height: 49px;
     width: 32px;
     right: 13px;
-    background-image: url("images/overlay_right.svg");
+    background-image: url("images/right.svg");
     background-color: transparent;
     background-size: cover;
     background-position: -10px;
