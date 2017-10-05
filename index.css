@@ -140,6 +140,7 @@ body {
     position: absolute;
     top: 15px;
     bottom: 0;
+    left: 2px;
     z-index: -1;
     background-color: transparent;
     box-shadow: 0 0 7px rgba(0,0,0,0.9);
