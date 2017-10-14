@@ -382,19 +382,19 @@ body {
 .articles_button_zoom {
     height: 62px;
     width: 62px;
-    top: 62px;
+    top: calc(50% - 32px);
     left: 121px;
     border-radius: 31px;
 }
 .articles_button_download {
-    top: 75px;
+    top: calc(50% - 18px);
     left: 83px;
 }
 .articles_button_share {
-    top: 75px;
+    top: calc(50% - 18px);
     left: 186px;
 }
-.articles_content_img:hover ~ .articles_button {
+.articles_content_img:hover > .articles_button {
     display: block;
 }
 .articles_content_img:hover {
