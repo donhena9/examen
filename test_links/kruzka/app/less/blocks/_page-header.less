@@ -1,0 +1,35 @@
+@import "../partials/_variables";
+@import "../partials/_mixins";
+
+.page-header {
+
+
+    &__bg-filter {
+        .flex-c;
+        position: relative;
+        background-color: @color-bg;
+    }
+
+    &__contacts {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    &__wrapper {
+        .flex-r;
+        justify-content: space-around;
+        padding-top: 70px;
+        margin-bottom: 20px;
+        background-color: darken(@color-bg, 30%);
+    }
+
+    &__logo {
+        .center;
+        margin-bottom: 5px;
+    }
+
+    &__navigation {
+        width: 70%;
+    }
+}

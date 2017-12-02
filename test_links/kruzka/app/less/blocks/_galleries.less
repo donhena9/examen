@@ -1,0 +1,42 @@
+@import "../partials/_variables";
+@import "../partials/_mixins";
+
+.galleries {
+    .flex-r;
+    justify-content: space-between;
+    align-items: center;
+
+    &__list {
+        .clear;
+        width: 40%;
+    }
+
+    &__sub {
+        position: relative;
+        cursor: pointer;
+        .clear;
+        .section-text;
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            z-index: -1;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: lighten(@color-bg,20%);
+            transition: 0.5s top, 0.5s height;
+        }
+
+        &:hover::after {
+            height: 50%;
+            top: 25%;
+        }
+
+        &:active::after {
+            height: 50%;
+            top: 25%;
+        }
+    }
+}

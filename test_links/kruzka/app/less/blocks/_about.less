@@ -1,0 +1,41 @@
+@import "../partials/_variables";
+@import "../partials/_mixins";
+
+.about {
+    .flex-c;
+    align-self: center;
+
+    width: 60%;
+
+    &__title {
+        .clear;
+        .section-title;
+
+    }
+
+    &__text {
+        .clear;
+        .section-text;
+    }
+
+    &__list {
+        .clear;
+    }
+
+    &__text-item {
+        position: relative;
+        .section-text;
+        padding-left: 50px;
+
+        &::after {
+            content: '';
+            position: absolute;
+            left: 15px;
+            top: 11px;
+            border: 10px solid transparent;
+            border-top-color: @txt-color-main;
+        }
+    }
+}
+
+

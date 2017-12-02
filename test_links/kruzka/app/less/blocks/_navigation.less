@@ -1,0 +1,49 @@
+@import "../partials/_variables";
+@import "../partials/_mixins";
+
+.navigation {
+
+
+    &__menu {
+        .flex-r;
+        .clear;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 20px;
+    }
+
+    &__item {
+        position: relative;
+
+        &::after {
+            content: '';
+            position: absolute;
+            display: none;
+            bottom: 0;
+            left: 0;
+            height: 5px;
+            width: 100%;
+            background-color: @txt-color-menu;
+
+        }
+        &:hover {
+            opacity: 0.7;
+        }
+        &:hover::after {
+            display: block;
+        }
+
+
+    }
+
+    &__link {
+        .clear;
+        display: block;
+        padding: 36px 0;
+
+
+        color: @txt-color-menu;
+
+
+    }
+}

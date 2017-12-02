@@ -1,0 +1,47 @@
+@import "../partials/_variables";
+@import "../partials/_mixins";
+
+.gallery {
+    position: relative;
+
+    &__view-port {
+        width: 500px;
+        height: 350px;
+        overflow: hidden;
+        margin: 0 120px;
+        border: 5px solid darken(@color-bg, 30%);
+    }
+
+    &__imgs-wrapper {
+        font-size: 0;
+        position: relative;
+        left: 0;
+        white-space: nowrap;
+        transition: 0.5s left;
+    }
+
+    &__img {
+        display: inline-block;
+        vertical-align: top;
+
+    }
+
+    &__pagination {
+        .clear-btn;
+        position: absolute;
+        height: 161px;
+        width: 88px;
+        top: 106px;
+        cursor: pointer;
+    }
+
+    &__pagination--left {
+        left: 0;
+        background-image: url("./../img/left.png");
+    }
+
+    &__pagination--right {
+        right: 0;
+        background-image: url("./../img/right.png");
+    }
+}
