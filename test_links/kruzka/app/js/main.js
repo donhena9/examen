@@ -1,60 +1,69 @@
 // Services Gallery
 
-let services = document.querySelectorAll('.galleries__sub'),
-    servicesList = services[1].parentElement,
-    galleryImgs = document.querySelectorAll('.gallery__img'),
-    prevImg = document.querySelector('.gallery__pagination--left'),
-    nextImg = document.querySelector('.gallery__pagination--right'),
-    imgWrapper = document.querySelector('.gallery__imgs-wrapper');
-
-console.log(servicesList);
-
-
+function Gallery(selector) {
+    let galleryName = document.querySelector(selector),
+        services = galleryName.querySelectorAll('.galleries__sub'),
+        servicesList = services[1].parentElement,
+        galleryImgs = galleryName.querySelectorAll('.gallery__img'),
+        prevImg = galleryName.querySelector('.gallery__pagination--left'),
+        nextImg = galleryName.querySelector('.gallery__pagination--right'),
+        imgWrapper = galleryName.querySelector('.gallery__imgs-wrapper');
 
 
-dataSet = function () {
-    for (let i = 0; i < services.length; i++) {
-        services[i].dataset.number = i + 1;
-    }
-};
+    dataSet = function () {
+        for (let i = 0; i < services.length; i++) {
+            services[i].dataset.number = i + 1;
+        }
+    };
 
-chooseGallery = function (e) {
-    let target = e.target,
-        number = e.target.dataset.number;
+    chooseGallery = function (e) {
+        let target = e.target,
+            number = e.target.dataset.number;
 
-    if (target.tagName !== 'LI') {
-        return;
-    }
+        if (target.tagName !== 'LI') {
+            return;
+        }
 
-    for (let i = 0; i < galleryImgs.length; i++) {
-        galleryImgs[i].setAttribute('src', 'img/gallery_'+ number + '/' + (i + 1) + '_s.jpg');
-    }
-};
+        for (let i = 0; i < galleryImgs.length; i++) {
+            galleryImgs[i].setAttribute('src', 'img/gallery_1/gallery_'+ number + '/' + (i + 1) + '_s.jpg');
+        }
+    };
 
-setNextImg = function (e) {
-    if (parseInt(getComputedStyle(imgWrapper).left) % 500 !== 0) {
-        return;
-    }
-    imgWrapper.style.left = (parseInt(getComputedStyle(imgWrapper).left, 10) - 500) + 'px';
+    setNextImg = function (e) {
+        if (parseInt(getComputedStyle(imgWrapper).left) % 500 !== 0) {
+            return;
+        }
+        imgWrapper.style.left = (parseInt(getComputedStyle(imgWrapper).left, 10) - 500) + 'px';
 
-};
+    };
 
-setPrevImg = function (e) {
-    if (getComputedStyle(imgWrapper).left === '0px') {
-        return;
-    }
-    if (parseInt(getComputedStyle(imgWrapper).left) % 500 !== 0) {
-        return;
-    }
-    imgWrapper.style.left = (parseInt(getComputedStyle(imgWrapper).left, 10) + 500) + 'px';
+    setPrevImg = function (e) {
+        if (getComputedStyle(imgWrapper).left === '0px') {
+            return;
+        }
+        if (parseInt(getComputedStyle(imgWrapper).left) % 500 !== 0) {
+            return;
+        }
+        imgWrapper.style.left = (parseInt(getComputedStyle(imgWrapper).left, 10) + 500) + 'px';
 
-};
+    };
 
 
-dataSet();
+    dataSet();
 
-servicesList.addEventListener('click', chooseGallery);
-nextImg.addEventListener('click', setNextImg);
-prevImg.addEventListener('click', setPrevImg);
+    servicesList.addEventListener('click', chooseGallery);
+    nextImg.addEventListener('click', setNextImg);
+    prevImg.addEventListener('click', setPrevImg);
+
+}
+
+new Gallery('.js-gallery-1');
+new Gallery('.js-gallery-2');
+new Gallery('.js-gallery-3');
+
+
+
+
+
 
 
