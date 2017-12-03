@@ -1,17 +1,17 @@
 @import "../partials/_variables";
 @import "../partials/_mixins";
 
-.about {
-    .flex-c;
-    align-self: center;
-
+.manufacture {
+    position: relative;
     width: @width-main;
-    max-width: 1500px;
+    max-width: 2000px;
 
+    align-self: center;
+    .flex-c;
+
+    //background-color: lighten(@color-bg,25%);
     &__title {
-        .clear;
         .section-title;
-
     }
 
     &__text {
@@ -38,5 +38,3 @@
         }
     }
 }
-
-

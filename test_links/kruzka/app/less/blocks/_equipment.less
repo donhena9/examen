@@ -1,18 +1,21 @@
 @import "../partials/_variables";
 @import "../partials/_mixins";
 
-.services {
+.equipment {
     position: relative;
     width: @width-main;
     max-width: 2000px;
 
     align-self: center;
     .flex-c;
+
+    //background-color: lighten(@color-bg,25%);
     &__title {
         .section-title;
     }
 
-    &__gallery {
-
+    &__text {
+        .clear;
+        .section-text;
     }
 }
