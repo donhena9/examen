@@ -2,21 +2,34 @@
 @import "../partials/_mixins";
 
 .page-header {
+    background-image: url("./../img/main-bg.jpg");
+    background-color: #95a3ba;
+    background-size: @view-port;
+    background-repeat: no-repeat;
 
 
     &__bg-filter {
         .flex-c;
         position: relative;
         background-color: @color-bg;
+
     }
 
     &__contacts {
         .clear;
         position: absolute;
-        top: 15px;
-        right: 15%;
-
+        top: -60px;
+        right: 0;
         font-weight: 600;
+    }
+
+    &__phone-number {
+
+    }
+
+    &__phone-link {
+        .clear;
+        color: @txt-color-main;
     }
 
     &__wrapper {
@@ -28,7 +41,8 @@
 
     &__inner {
         width: @width-main;
-        max-width: 1500px;
+        max-width: 2000px;
+        position: relative;
         .flex-r;
         justify-content: space-between;
     }

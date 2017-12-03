@@ -10,13 +10,20 @@
 <body class="main-page">
 	<header class="main-page__header page-header ">
         <div class="page-header__bg-filter">
-            <ul class="page-header__contacts">
-                <li class="page-header__phone-number">8 (903) 795-86-80</li>
-                <li class="page-header__phone-number">8 (903) 795-86-81</li>
-                <li class="page-header__phone-number">8 (903) 795-86-82</li>
-            </ul>
+
             <div class="page-header__wrapper">
                 <div class="page-header__inner">
+                    <ul class="page-header__contacts">
+                        <li class="page-header__phone-number">
+                            <a href="tel:+79037958680" class="page-header__phone-link">8 (903) 795-86-80</a>
+                        </li>
+                        <li class="page-header__phone-number">
+                            <a href="tel:+79037958681" class="page-header__phone-link">8 (903) 795-86-81</a>
+                        </li>
+                        <li class="page-header__phone-number">
+                            <a href="tel:+79037958682" class="page-header__phone-link">8 (903) 795-86-82</a>
+                        </li>
+                    </ul>
                     <a class="page-header__logo">
                         <img src="img/main-logo.png" class="page-header__logo-img" width="86" height="90" alt="Логотип фирмы">
                     </a>
@@ -52,7 +59,7 @@
         <h2 class="services__title">УСЛУГИ</h2>
         <div class="services__gallery galleries js-gallery-1">
             <ul class="galleries__list">
-                <li class="galleries__sub">
+                <li class="galleries__sub galleries__sub--active">
                     Технология автозаправочных комплексов
                 </li>
                 <li class="galleries__sub">
@@ -89,7 +96,7 @@
             </div>
         </div>
         <div class="services__gallery galleries js-gallery-2">
-            <div class="galleries__gallery gallery">
+            <div class="galleries__gallery--left gallery">
                 <div class="gallery__view-port">
                     <div class="gallery__imgs-wrapper">
                         <img src="img/gallery_2/gallery_1/1_s.jpg" alt="Картинка услуг" width="500" class="gallery__img">
@@ -102,8 +109,7 @@
                 <button class="gallery__pagination  gallery__pagination--right"></button>
             </div>
             <ul class="galleries__list">
-
-                <li class="galleries__sub">
+                <li class="galleries__sub  galleries__sub--active">
                     Изготовление и монтаж оборудования для хранения и выдачи технических масел
                 </li>
                 <li class="galleries__sub">
@@ -141,7 +147,7 @@
         </ul>
         <div class="manufacture__gallery galleries js-gallery-3">
             <ul class="galleries__list">
-                <li class="galleries__sub">
+                <li class="galleries__sub galleries__sub--active">
                     Двустенные резервуары и резервуарное оборудование как стандартного так и специального назначения
                 </li>
                 <li class="galleries__sub">
@@ -167,13 +173,18 @@
 	</section>
 
     <section class="main-page__section equipment" id="equipment">
-		<h2 class="equipment__title">ОБОРУДОВАНИЕ</h2>
-		<p class="equipment__text">При проведении работ на тех или иных объектах топливных парков и АЗС, необходимо применять технологическое оборудование, которое будет соответствовать техническому регламенту и статусу применения данного объекта</p>
-		<p class="equipment__text">Специалисты ООО "МЗК Технология" помогут грамотно подобрать оборудование, изготовить и приобрести или установить его в кратчайшие сроки, а при реконструкции, в большинстве случаев, поменять вышедшее из строя оборудование без остановки хозяйственной деятельности объекта</p>
-		<p class="equipment__text">Современное развитие науки и техники сегодня во всех отраслях нашей промышленности и в частности топливо-энергетическом комплексе, подразумевают применение последних достижений мировых и отечественных лидеров в производстве топливного оборудования и в сфере предоставляемых услуг</p>
-		<p class="equipment__text">В области разработки и применения систем технологического оборудования для различных объектов топливообеспечения ООО "МЗК Технология", имеющая в своем штате высококвалифицированных специалистов, занимает лидирующие позиции на рынке</p>
-		<p class="equipment__text">Специалисты с 20 летним стажем работы в данной области, готовы предложить свои услуги в широком спектре технологических процессов топливообеспечения любых энергетических установок, а также в области приема, хранения и выдачи топлива -  АЗС, нефтебаз и пунктов хранения топлива</p>
-	</section>
+        <div class="equipment__bg-filter">
+            <div class="equipment__wrapper">
+                <h2 class="equipment__title">ОБОРУДОВАНИЕ</h2>
+                <p class="equipment__text">При проведении работ на тех или иных объектах топливных парков и АЗС, необходимо применять технологическое оборудование, которое будет соответствовать техническому регламенту и статусу применения данного объекта</p>
+                <p class="equipment__text">Специалисты ООО "МЗК Технология" помогут грамотно подобрать оборудование, изготовить и приобрести или установить его в кратчайшие сроки, а при реконструкции, в большинстве случаев, поменять вышедшее из строя оборудование без остановки хозяйственной деятельности объекта</p>
+                <p class="equipment__text">Современное развитие науки и техники сегодня во всех отраслях нашей промышленности и в частности топливо-энергетическом комплексе, подразумевают применение последних достижений мировых и отечественных лидеров в производстве топливного оборудования и в сфере предоставляемых услуг</p>
+                <p class="equipment__text">В области разработки и применения систем технологического оборудования для различных объектов топливообеспечения ООО "МЗК Технология", имеющая в своем штате высококвалифицированных специалистов, занимает лидирующие позиции на рынке</p>
+                <p class="equipment__text">Специалисты с 20 летним стажем работы в данной области, готовы предложить свои услуги в широком спектре технологических процессов топливообеспечения любых энергетических установок, а также в области приема, хранения и выдачи топлива -  АЗС, нефтебаз и пунктов хранения топлива</p>
+
+            </div>
+        </div>
+    </section>
 
 	<section class="main-page__section admission" id="admission">
 		<h2 class="admission__title">ДОПУСК СРО</h2>
@@ -186,6 +197,8 @@
 
 
 	<footer class="main-page__footer contacts" id="contacts">
+        <h2 class="admission__title">КОНТАКТЫ</h2>
+
 	</footer>
 
 <script src="js/main.js"></script>

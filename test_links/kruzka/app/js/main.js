@@ -1,4 +1,4 @@
-// Services Gallery
+// Default Gallery (services, manufacture)
 
 function Gallery(selector) {
     let galleryName = document.querySelector(selector),
@@ -19,10 +19,14 @@ function Gallery(selector) {
     chooseGallery = function (e) {
         let target = e.target,
             number = e.target.dataset.number;
-
         if (target.tagName !== 'LI') {
             return;
         }
+
+        for (let j = 0; j < services.length; j++) {
+            services[j].classList.remove('galleries__sub--active');
+        }
+        target.classList.add('galleries__sub--active');
 
         for (let i = 0; i < galleryImgs.length; i++) {
             galleryImgs[i].setAttribute('src', 'img/gallery_1/gallery_'+ number + '/' + (i + 1) + '_s.jpg');
@@ -34,7 +38,6 @@ function Gallery(selector) {
             return;
         }
         imgWrapper.style.left = (parseInt(getComputedStyle(imgWrapper).left, 10) - 500) + 'px';
-
     };
 
     setPrevImg = function (e) {
@@ -45,12 +48,9 @@ function Gallery(selector) {
             return;
         }
         imgWrapper.style.left = (parseInt(getComputedStyle(imgWrapper).left, 10) + 500) + 'px';
-
     };
 
-
     dataSet();
-
     servicesList.addEventListener('click', chooseGallery);
     nextImg.addEventListener('click', setNextImg);
     prevImg.addEventListener('click', setPrevImg);

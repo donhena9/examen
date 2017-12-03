@@ -2,14 +2,27 @@
 @import "../partials/_mixins";
 
 .equipment {
-    position: relative;
-    width: @width-main;
-    max-width: 2000px;
+    width: @view-port;
 
-    align-self: center;
-    .flex-c;
+    background-image: url("./../img/main-bg.jpg");
+    background-color: #95a3ba;
+    background-size: @view-port;
+    background-repeat: no-repeat;
 
-    //background-color: lighten(@color-bg,25%);
+
+    &__bg-filter {
+        background-color: @color-bg;
+        width: @view-port;
+        .center;
+    }
+
+    &__wrapper {
+        position: relative;
+        width: @width-main;
+        max-width: 2000px;
+        .flex-c;
+    }
+
     &__title {
         .section-title;
     }
