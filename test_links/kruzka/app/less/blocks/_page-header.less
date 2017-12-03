@@ -11,17 +11,26 @@
     }
 
     &__contacts {
+        .clear;
         position: absolute;
-        top: 0;
-        right: 0;
+        top: 15px;
+        right: 20%;
+
+        font-weight: 600;
     }
 
     &__wrapper {
-        .flex-r;
-        justify-content: space-around;
+        .center;
         padding-top: 70px;
         margin-bottom: 20px;
         background-color: darken(@color-bg, 30%);
+    }
+
+    &__inner {
+        width: 60%;
+        max-width: 1500px;
+        .flex-r;
+        justify-content: space-between;
     }
 
     &__logo {
