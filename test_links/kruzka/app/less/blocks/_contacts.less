@@ -3,8 +3,11 @@
 
 .contacts {
     position: relative;
-    width: @width-main;
-    max-width: @max-width;
+    width: @view-port;
+    .flex-r;
+    align-items: center;
+    background-color: darken(@color-bg, 30%);
+
 
     align-self: center;
     .flex-c;
@@ -16,5 +19,53 @@
     &__text {
         .clear;
         .section-text;
+        margin-bottom: 5px;
+    }
+
+    &__wrapper {
+        .flex-r;
+        justify-content: space-between;
+        align-items: flex-start;
+        position: relative;
+        width: @width-main;
+        max-width: @max-width;
+        margin-bottom: 20px;
+    }
+
+    &__column {
+        width: 20%;
+        .flex-c;
+        align-items: center;
+    }
+
+    &__name {
+        font-size: 27px;
+        color: @txt-color-main;
+    }
+
+    &__phone-number,
+    &__email {
+        color: @txt-color-main;
+        .clear;
+        display: block;
+        .section-text;
+        margin-bottom: 5px;
+    }
+    &__map {
+        width: @view-port;
+        max-width: 2000px;
+        margin-bottom: 20px;
+    }
+
+    &__links {
+        width: @width-main;
+        max-width: @max-width;
+        .flex-r;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+    &__made-by {
+        color: @txt-color-main;
     }
 }
