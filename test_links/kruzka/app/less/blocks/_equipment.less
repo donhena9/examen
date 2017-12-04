@@ -8,6 +8,9 @@
     background-color: #95a3ba;
     background-size: @view-port;
     background-repeat: no-repeat;
+    @media @mobile {
+        background-image: none;
+    }
 
 
     &__bg-filter {
@@ -18,7 +21,7 @@
 
     &__wrapper {
         position: relative;
-        width: @width-main;
+        width: @width-main + 20%;
         max-width: @max-width;
         .flex-c;
     }

@@ -8,6 +8,12 @@
     width: @width-main;
     max-width: @max-width;
 
+    @media @mobile {
+        width: @view-port - 10%;
+        padding-right: 5%;
+        padding-left: 5%;
+    }
+
     &__title {
         .clear;
         .section-title;

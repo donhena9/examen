@@ -8,8 +8,12 @@
         width: 500px;
         height: 350px;
         overflow: hidden;
-        margin: 0 120px;
+        margin: 0 50px;
         border: 5px solid darken(@color-bg, 30%);
+
+        @media @mobile {
+            width: 100px;
+        }
     }
 
     &__imgs-wrapper {
@@ -30,9 +34,11 @@
         .clear-btn;
         position: absolute;
         height: 161px;
-        width: 88px;
+        width: 44px;
         top: 106px;
         cursor: pointer;
+        background-size: 44px 161px;
+        background-repeat: no-repeat;
         &:hover {
             opacity: 0.6;
         }

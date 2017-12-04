@@ -6,9 +6,23 @@
     justify-content: space-between;
     align-items: center;
 
+    @media @mobile {
+        .flex-c;
+
+    }
+
     &__list {
         .clear;
         width: 40%;
+        @media @mobile {
+            width: @width-main + 15%;
+        }
+
+        &--narrow {
+            @media @mobile {
+                width: @view-port;
+            }
+        }
     }
 
     &__sub {
@@ -19,6 +33,12 @@
         .clear;
         .section-text;
         padding: 15px;
+
+        @media @mobile {
+            min-height: 20px;
+            padding: 5px;
+            text-align: center;
+        }
 
         &::after {
             content: '';
@@ -49,9 +69,15 @@
 
     &__gallery {
         margin-left: 20px;
+        @media @mobile {
+            margin-left: 0;
+        }
     }
 
     &__gallery--left {
         margin-right: 20px;
+        @media @mobile {
+            margin-right: 0;
+        }
     }
 }

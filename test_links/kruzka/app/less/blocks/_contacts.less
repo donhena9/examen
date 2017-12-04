@@ -30,12 +30,19 @@
         width: @width-main;
         max-width: @max-width;
         margin-bottom: 20px;
+        @media @mobile {
+            .flex-c;
+            width: @view-port;
+        }
     }
 
     &__column {
         width: 30%;
         .flex-c;
         align-items: center;
+        @media @mobile {
+            width: @view-port;
+        }
     }
 
     &__name {

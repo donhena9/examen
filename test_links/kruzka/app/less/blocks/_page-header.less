@@ -7,6 +7,12 @@
     background-size: @view-port;
     background-repeat: no-repeat;
 
+    width: @view-port;
+
+    @media @mobile {
+        background-image: none;
+    }
+
 
     &__bg-filter {
         .flex-c;
@@ -54,5 +60,11 @@
 
     &__navigation {
         width: 70%;
+
+        @media @mobile {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
     }
 }

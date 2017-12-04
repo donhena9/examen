@@ -12,6 +12,13 @@
     background-color: lighten(@color-bg, 30%);
     padding: 0 10px 20px 10px;
     border-radius: 100px;
+
+    @media @mobile {
+        width: @view-port - 10%;
+        border-radius: 0;
+        padding-left: 5%;
+        padding-right: 5%;
+    }
     &__title {
         .section-title;
     }
