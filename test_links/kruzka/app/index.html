@@ -28,9 +28,19 @@
                     <a class="page-header__logo">
                         <img src="img/main-logo.png" class="page-header__logo-img" width="86" height="90" alt="Логотип фирмы">
                     </a>
-                    <nav class="page-header__navigation navigation">
-                        <ul class="navigation__menu">
-                            <li class="navigation__item"><a class="navigation__link" href="#about">О КОМПАНИИ</a></li>
+                    <nav class="page-header__navigation navigation js-navigation">
+                        <div class="navigation__icon-wrapper">
+                            <svg  class="navigation__icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                viewBox="0 0 124 124" style="enable-background:new 0 0 124 124;" xml:space="preserve">
+                                <g>
+                                    <path class="navigation__icon-line" d="M112,6H12C5.4,6,0,11.4,0,18s5.4,12,12,12h100c6.6,0,12-5.4,12-12S118.6,6,112,6z"/>
+                                    <path class="navigation__icon-line" d="M112,50H12C5.4,50,0,55.4,0,62c0,6.6,5.4,12,12,12h100c6.6,0,12-5.4,12-12C124,55.4,118.6,50,112,50z"/>
+                                    <path class="navigation__icon-line" d="M112,94H12c-6.6,0-12,5.4-12,12s5.4,12,12,12h100c6.6,0,12-5.4,12-12S118.6,94,112,94z"/>
+                                </g>
+                            </svg>
+                        </div>
+                        <ul class="navigation__menu navigation__menu--dis">
+                            <li class="navigation__item  navigation__item--first"><a class="navigation__link" href="#about">О КОМПАНИИ</a></li>
                             <li class="navigation__item"><a class="navigation__link" href="#services">УСЛУГИ</a></li>
                             <li class="navigation__item"><a class="navigation__link" href="#manufacture">ПРОИЗВОДСТВО</a></li>
                             <li class="navigation__item"><a class="navigation__link" href="#equipment">ОБОРУДОВАНИЕ</a></li>
@@ -58,9 +68,19 @@
 
 	<section class="main-page__section services" id="services">
         <h2 class="services__title">УСЛУГИ</h2>
-        <div class="services__gallery galleries js-gallery-1">
+        <div class="services__gallery services__gallery--first galleries js-gallery-1">
             <ul class="galleries__list">
-                <li class="galleries__sub galleries__sub--active">
+                <li class="galleries__icon-wrapper">
+                    <svg  class="galleries__icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                          viewBox="0 0 124 124" style="enable-background:new 0 0 124 124;" xml:space="preserve">
+                        <g>
+                            <path class="galleries__icon-line" d="M112,6H12C5.4,6,0,11.4,0,18s5.4,12,12,12h100c6.6,0,12-5.4,12-12S118.6,6,112,6z"/>
+                            <path class="galleries__icon-line" d="M112,50H12C5.4,50,0,55.4,0,62c0,6.6,5.4,12,12,12h100c6.6,0,12-5.4,12-12C124,55.4,118.6,50,112,50z"/>
+                            <path class="galleries__icon-line" d="M112,94H12c-6.6,0-12,5.4-12,12s5.4,12,12,12h100c6.6,0,12-5.4,12-12S118.6,94,112,94z"/>
+                        </g>
+                    </svg>
+                </li>
+                <li class="galleries__sub galleries__sub--active galleries__sub--visible">
                     Технология автозаправочных комплексов
                 </li>
                 <li class="galleries__sub">
@@ -86,31 +106,85 @@
             <div class="galleries__gallery gallery">
                 <div class="gallery__view-port">
                     <div class="gallery__imgs-wrapper">
-                        <img src="img/gallery_1/gallery_1/1_s.jpg" alt="Картинка услуг" width="500" class="gallery__img">
-                        <img src="img/gallery_1/gallery_1/2_s.jpg" alt="Картинка услуг" width="500" class="gallery__img">
-                        <img src="img/gallery_1/gallery_1/3_s.jpg" alt="Картинка услуг" width="500" class="gallery__img">
-                        <img src="img/gallery_1/gallery_1/4_s.jpg" alt="Картинка услуг" width="500" class="gallery__img">
+                        <img src="img/gallery_1/gallery_1/1_s.jpg" alt="Картинка услуг" class="gallery__img">
+                        <img src="img/gallery_1/gallery_1/2_s.jpg" alt="Картинка услуг" class="gallery__img">
+                        <img src="img/gallery_1/gallery_1/3_s.jpg" alt="Картинка услуг" class="gallery__img">
+                        <img src="img/gallery_1/gallery_1/4_s.jpg" alt="Картинка услуг" class="gallery__img">
                     </div>
                 </div>
-                <button class="gallery__pagination  gallery__pagination--left"></button>
-                <button class="gallery__pagination  gallery__pagination--right"></button>
+                <svg class="gallery__pagination  gallery__pagination--left" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	             viewBox="0 0 60 60" style="enable-background:new 0 0 60 60;" xml:space="preserve">
+                    <g>
+                        <path d="M45.467,14.116c-0.326-0.174-0.723-0.15-1.031,0.058l-22,15C22.164,29.36,22,29.669,22,30s0.164,0.64,0.437,0.826l22,15
+                            C44.606,45.941,44.803,46,45,46c0.16,0,0.321-0.038,0.467-0.116C45.795,45.711,46,45.371,46,45V15
+                            C46,14.629,45.795,14.289,45.467,14.116z M44,43.107L24.775,30L44,16.893V43.107z"/>
+                        <path d="M30,0C13.458,0,0,13.458,0,30s13.458,30,30,30s30-13.458,30-30S46.542,0,30,0z M30,58C14.561,58,2,45.439,2,30
+                            S14.561,2,30,2s28,12.561,28,28S45.439,58,30,58z"/>
+                        <path d="M13,46h7V14h-7V46z M15,16h3v28h-3V16z"/>
+                    </g>
+                </svg>
+                <svg class="gallery__pagination  gallery__pagination--right" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	            viewBox="0 0 60 60" style="enable-background:new 0 0 60 60;" xml:space="preserve">
+                    <g>
+                        <path d="M37.563,29.174l-22-15c-0.307-0.208-0.704-0.231-1.031-0.058C14.205,14.289,14,14.629,14,15v30
+                            c0,0.371,0.205,0.711,0.533,0.884C14.679,45.962,14.84,46,15,46c0.197,0,0.394-0.059,0.563-0.174l22-15
+                            C37.836,30.64,38,30.331,38,30S37.836,29.36,37.563,29.174z M16,43.107V16.893L35.225,30L16,43.107z"/>
+                        <path d="M30,0C13.458,0,0,13.458,0,30s13.458,30,30,30s30-13.458,30-30S46.542,0,30,0z M30,58C14.561,58,2,45.439,2,30
+                            S14.561,2,30,2s28,12.561,28,28S45.439,58,30,58z"/>
+                        <path d="M40,46h7V14h-7V46z M42,16h3v28h-3V16z"/>
+                    </g>
+                </svg>
+                <!--<button class="gallery__pagination  gallery__pagination&#45;&#45;left"></button>-->
+                <!--<button class="gallery__pagination  gallery__pagination&#45;&#45;right"></button>-->
             </div>
         </div>
-        <div class="services__gallery galleries js-gallery-2">
+        <div class="services__gallery galleries galleries--reverse js-gallery-2">
             <div class="galleries__gallery--left gallery">
                 <div class="gallery__view-port">
                     <div class="gallery__imgs-wrapper">
-                        <img src="img/gallery_2/gallery_1/1_s.jpg" alt="Картинка услуг" width="500" class="gallery__img">
-                        <img src="img/gallery_2/gallery_1/2_s.jpg" alt="Картинка услуг" width="500" class="gallery__img">
-                        <img src="img/gallery_2/gallery_1/3_s.jpg" alt="Картинка услуг" width="500" class="gallery__img">
-                        <img src="img/gallery_2/gallery_1/4_s.jpg" alt="Картинка услуг" width="500" class="gallery__img">
+                        <img src="img/gallery_2/gallery_1/1_s.jpg" alt="Картинка услуг" class="gallery__img">
+                        <img src="img/gallery_2/gallery_1/2_s.jpg" alt="Картинка услуг" class="gallery__img">
+                        <img src="img/gallery_2/gallery_1/3_s.jpg" alt="Картинка услуг" class="gallery__img">
+                        <img src="img/gallery_2/gallery_1/4_s.jpg" alt="Картинка услуг" class="gallery__img">
                     </div>
                 </div>
-                <button class="gallery__pagination  gallery__pagination--left"></button>
-                <button class="gallery__pagination  gallery__pagination--right"></button>
+                <svg class="gallery__pagination  gallery__pagination--left" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	             viewBox="0 0 60 60" style="enable-background:new 0 0 60 60;" xml:space="preserve">
+                    <g>
+                        <path d="M45.467,14.116c-0.326-0.174-0.723-0.15-1.031,0.058l-22,15C22.164,29.36,22,29.669,22,30s0.164,0.64,0.437,0.826l22,15
+                            C44.606,45.941,44.803,46,45,46c0.16,0,0.321-0.038,0.467-0.116C45.795,45.711,46,45.371,46,45V15
+                            C46,14.629,45.795,14.289,45.467,14.116z M44,43.107L24.775,30L44,16.893V43.107z"/>
+                        <path d="M30,0C13.458,0,0,13.458,0,30s13.458,30,30,30s30-13.458,30-30S46.542,0,30,0z M30,58C14.561,58,2,45.439,2,30
+                            S14.561,2,30,2s28,12.561,28,28S45.439,58,30,58z"/>
+                        <path d="M13,46h7V14h-7V46z M15,16h3v28h-3V16z"/>
+                    </g>
+                </svg>
+                <svg class="gallery__pagination  gallery__pagination--right" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	            viewBox="0 0 60 60" style="enable-background:new 0 0 60 60;" xml:space="preserve">
+                    <g>
+                        <path d="M37.563,29.174l-22-15c-0.307-0.208-0.704-0.231-1.031-0.058C14.205,14.289,14,14.629,14,15v30
+                            c0,0.371,0.205,0.711,0.533,0.884C14.679,45.962,14.84,46,15,46c0.197,0,0.394-0.059,0.563-0.174l22-15
+                            C37.836,30.64,38,30.331,38,30S37.836,29.36,37.563,29.174z M16,43.107V16.893L35.225,30L16,43.107z"/>
+                        <path d="M30,0C13.458,0,0,13.458,0,30s13.458,30,30,30s30-13.458,30-30S46.542,0,30,0z M30,58C14.561,58,2,45.439,2,30
+                            S14.561,2,30,2s28,12.561,28,28S45.439,58,30,58z"/>
+                        <path d="M40,46h7V14h-7V46z M42,16h3v28h-3V16z"/>
+                    </g>
+                </svg>
+                <!--<button class="gallery__pagination  gallery__pagination&#45;&#45;left"></button>-->
+                <!--<button class="gallery__pagination  gallery__pagination&#45;&#45;right"></button>-->
             </div>
             <ul class="galleries__list">
-                <li class="galleries__sub  galleries__sub--active">
+                <li class="galleries__icon-wrapper">
+                    <svg  class="galleries__icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                          viewBox="0 0 124 124" style="enable-background:new 0 0 124 124;" xml:space="preserve">
+                        <g>
+                            <path class="galleries__icon-line" d="M112,6H12C5.4,6,0,11.4,0,18s5.4,12,12,12h100c6.6,0,12-5.4,12-12S118.6,6,112,6z"/>
+                            <path class="galleries__icon-line" d="M112,50H12C5.4,50,0,55.4,0,62c0,6.6,5.4,12,12,12h100c6.6,0,12-5.4,12-12C124,55.4,118.6,50,112,50z"/>
+                            <path class="galleries__icon-line" d="M112,94H12c-6.6,0-12,5.4-12,12s5.4,12,12,12h100c6.6,0,12-5.4,12-12S118.6,94,112,94z"/>
+                        </g>
+                    </svg>
+                </li>
+                <li class="galleries__sub  galleries__sub--active galleries__sub--visible">
                     Изготовление и монтаж оборудования для хранения и выдачи технических масел
                 </li>
                 <li class="galleries__sub">
@@ -148,7 +222,17 @@
         </ul>
         <div class="manufacture__gallery galleries js-gallery-3">
             <ul class="galleries__list galleries__list--narrow">
-                <li class="galleries__sub galleries__sub--active">
+                <li class="galleries__icon-wrapper">
+                    <svg  class="galleries__icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                          viewBox="0 0 124 124" style="enable-background:new 0 0 124 124;" xml:space="preserve">
+                        <g>
+                            <path class="galleries__icon-line" d="M112,6H12C5.4,6,0,11.4,0,18s5.4,12,12,12h100c6.6,0,12-5.4,12-12S118.6,6,112,6z"/>
+                            <path class="galleries__icon-line" d="M112,50H12C5.4,50,0,55.4,0,62c0,6.6,5.4,12,12,12h100c6.6,0,12-5.4,12-12C124,55.4,118.6,50,112,50z"/>
+                            <path class="galleries__icon-line" d="M112,94H12c-6.6,0-12,5.4-12,12s5.4,12,12,12h100c6.6,0,12-5.4,12-12S118.6,94,112,94z"/>
+                        </g>
+                    </svg>
+                </li>
+                <li class="galleries__sub galleries__sub--active galleries__sub--visible">
                     Двустенные резервуары и резервуарное оборудование как стандартного так и специального назначения
                 </li>
                 <li class="galleries__sub">
@@ -161,14 +245,36 @@
             <div class="galleries__gallery gallery">
                 <div class="gallery__view-port">
                     <div class="gallery__imgs-wrapper">
-                        <img src="img/gallery_3/gallery_1/1_s.jpg" alt="Картинка услуг" width="500" class="gallery__img">
-                        <img src="img/gallery_3/gallery_1/2_s.jpg" alt="Картинка услуг" width="500" class="gallery__img">
-                        <img src="img/gallery_3/gallery_1/3_s.jpg" alt="Картинка услуг" width="500" class="gallery__img">
-                        <img src="img/gallery_3/gallery_1/4_s.jpg" alt="Картинка услуг" width="500" class="gallery__img">
+                        <img src="img/gallery_3/gallery_1/1_s.jpg" alt="Картинка услуг" class="gallery__img">
+                        <img src="img/gallery_3/gallery_1/2_s.jpg" alt="Картинка услуг" class="gallery__img">
+                        <img src="img/gallery_3/gallery_1/3_s.jpg" alt="Картинка услуг" class="gallery__img">
+                        <img src="img/gallery_3/gallery_1/4_s.jpg" alt="Картинка услуг" class="gallery__img">
                     </div>
                 </div>
-                <button class="gallery__pagination  gallery__pagination--left"></button>
-                <button class="gallery__pagination  gallery__pagination--right"></button>
+                <svg class="gallery__pagination  gallery__pagination--left" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	             viewBox="0 0 60 60" style="enable-background:new 0 0 60 60;" xml:space="preserve">
+                    <g>
+                        <path d="M45.467,14.116c-0.326-0.174-0.723-0.15-1.031,0.058l-22,15C22.164,29.36,22,29.669,22,30s0.164,0.64,0.437,0.826l22,15
+                            C44.606,45.941,44.803,46,45,46c0.16,0,0.321-0.038,0.467-0.116C45.795,45.711,46,45.371,46,45V15
+                            C46,14.629,45.795,14.289,45.467,14.116z M44,43.107L24.775,30L44,16.893V43.107z"/>
+                        <path d="M30,0C13.458,0,0,13.458,0,30s13.458,30,30,30s30-13.458,30-30S46.542,0,30,0z M30,58C14.561,58,2,45.439,2,30
+                            S14.561,2,30,2s28,12.561,28,28S45.439,58,30,58z"/>
+                        <path d="M13,46h7V14h-7V46z M15,16h3v28h-3V16z"/>
+                    </g>
+                </svg>
+                <svg class="gallery__pagination  gallery__pagination--right" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	            viewBox="0 0 60 60" style="enable-background:new 0 0 60 60;" xml:space="preserve">
+                    <g>
+                        <path d="M37.563,29.174l-22-15c-0.307-0.208-0.704-0.231-1.031-0.058C14.205,14.289,14,14.629,14,15v30
+                            c0,0.371,0.205,0.711,0.533,0.884C14.679,45.962,14.84,46,15,46c0.197,0,0.394-0.059,0.563-0.174l22-15
+                            C37.836,30.64,38,30.331,38,30S37.836,29.36,37.563,29.174z M16,43.107V16.893L35.225,30L16,43.107z"/>
+                        <path d="M30,0C13.458,0,0,13.458,0,30s13.458,30,30,30s30-13.458,30-30S46.542,0,30,0z M30,58C14.561,58,2,45.439,2,30
+                            S14.561,2,30,2s28,12.561,28,28S45.439,58,30,58z"/>
+                        <path d="M40,46h7V14h-7V46z M42,16h3v28h-3V16z"/>
+                    </g>
+                </svg>
+                <!--<button class="gallery__pagination  gallery__pagination&#45;&#45;left"></button>-->
+                <!--<button class="gallery__pagination  gallery__pagination&#45;&#45;right"></button>-->
             </div>
         </div>
 	</section>

@@ -4,6 +4,38 @@
 .navigation {
     flex-grow: 0.5;
 
+    @media @mobile {
+        .flex-r;
+        justify-content: flex-end;
+    }
+
+    &__icon-wrapper {
+        display: none;
+        order: 2;
+        @media @mobile {
+            display: block;
+            border: solid 2px @txt-color-main;
+            width: 50px;
+            height: 50px;
+        }
+    }
+    &__icon-wrapper--transformed {
+        border-left: none;
+    }
+
+    &__icon {
+        transition: transform 0.5s;
+        //cursor: pointer;
+    }
+
+    &__icon--transformed {
+        transform: rotate(90deg);
+    }
+
+    &__icon-line {
+        fill: @txt-color-main;
+    }
+
     &__menu {
         .flex-r;
         .clear;
@@ -16,8 +48,18 @@
 
         @media @mobile {
             .flex-c;
+            background-color: darken(fade(@color-bg, 100%),10%);
+            border: solid 2px @txt-color-main;
+            max-width: 150px;
+            width: auto;
+            height: auto;
+            padding: 0 5px;
+        }
+    }
 
-            outline: solid 2px red;
+    &__menu--dis {
+        @media @mobile {
+            display: none;
         }
     }
 
@@ -34,7 +76,6 @@
             height: 5px;
             width: 100%;
             background-color: @txt-color-menu;
-
         }
         &:hover {
             opacity: 0.7;
@@ -42,18 +83,22 @@
         &:hover::after {
             display: block;
         }
+    }
 
-
+    &__item--first {
+        @media @mobile {
+            padding-top: 11px;
+        }
     }
 
     &__link {
         .clear;
         display: block;
         padding: 36px 0;
-
-
         color: @txt-color-menu;
 
-
+        @media @mobile {
+            padding: 11px 0;
+        }
     }
 }

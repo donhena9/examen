@@ -5,24 +5,56 @@
     .flex-r;
     justify-content: space-between;
     align-items: center;
-
     @media @mobile {
         .flex-c;
+        position: relative;
+        padding-bottom: 35px;
+    }
 
+    &--reverse {
+        @media @mobile {
+            flex-direction: column-reverse;
+        }
     }
 
     &__list {
         .clear;
+        position: relative;
         width: 40%;
         @media @mobile {
-            width: @width-main + 15%;
+            width: 80%;
+            left: 65px;
+            position: absolute;
+            top: 0;
+
         }
 
         &--narrow {
             @media @mobile {
-                width: @view-port;
+                width: 90%;
+                left: 45px;
             }
         }
+        &--active {
+            z-index: 200;
+        }
+    }
+
+    &__icon-wrapper {
+        display: none;
+        @media @mobile {
+            display: flex;
+            position: absolute;
+            left: -52px;
+            align-items: center;
+            border: @txt-color-main 2px solid;
+            border-right: none;
+
+        }
+    }
+    &__icon {
+        width: 50px;
+        height: 50px;
     }
 
     &__sub {
@@ -35,10 +67,16 @@
         padding: 15px;
 
         @media @mobile {
-            min-height: 20px;
-            padding: 5px;
-            text-align: center;
+            display: none;
+            margin-top: 0;
+            margin-bottom: 0;
+            border: 2px solid @txt-color-main;
+            border-top-width: 1px;
+            border-bottom-width: 1px;
+            padding-top: 5px;
+            padding-bottom: 5px;
         }
+
 
         &::after {
             content: '';
@@ -51,10 +89,16 @@
             background-color: lighten(@color-bg, 20%);
             border-radius: 20px;
             transition: 0.1s top, 0.1s height, 0.5s width;
+            @media @mobile {
+                border-radius: 0;
+            }
         }
 
         &:hover::after {
             opacity: 0.6;
+            @media @mobile {
+                opacity: 1;
+            }
         }
 
         &:active::after {
@@ -62,21 +106,42 @@
             top: 25%;
         }
 
+        &--visible {
+            @media @mobile {
+                display: block;
+            }
+        }
+
+        &--active {
+            display: block;
+
+            &::before {
+
+            }
+        }
+
         &--active::after {
             background-color: darken(@color-bg, 15%);
+            @media @mobile {
+                background-color: darken(fade(@color-bg,100%),15%);
+            }
         }
     }
 
     &__gallery {
         margin-left: 20px;
         @media @mobile {
+            margin-top: 110px;
             margin-left: 0;
+
         }
+
     }
 
     &__gallery--left {
         margin-right: 20px;
         @media @mobile {
+            margin-top: 130px;
             margin-right: 0;
         }
     }
