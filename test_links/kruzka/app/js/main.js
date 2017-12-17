@@ -8,7 +8,8 @@ function Gallery(selector) {
         galleryImgs = galleryName.querySelectorAll('.gallery__img'),
         prevImg = galleryName.querySelector('.gallery__pagination--left'),
         nextImg = galleryName.querySelector('.gallery__pagination--right'),
-        imgWrapper = galleryName.querySelector('.gallery__imgs-wrapper');
+        imgWrapper = galleryName.querySelector('.gallery__imgs-wrapper'),
+        imgWrapperWidth = Math.ceil(getComputedStyle(imgWrapper).width.slice(0,-2));
 
 
     let dataSet = function () {
@@ -35,20 +36,23 @@ function Gallery(selector) {
     };
 
     let setNextImg = function (e) {
-        if (parseInt(getComputedStyle(imgWrapper).left) % 500 !== 0) {
+        if (parseInt(getComputedStyle(imgWrapper).left) % 250 !== 0) {
             return;
         }
-        imgWrapper.style.left = (parseInt(getComputedStyle(imgWrapper).left, 10) - 500) + 'px';
+        if (getComputedStyle(imgWrapper).left === -imgWrapperWidth * (galleryImgs.length - 1) + 'px') {
+            return;
+        }
+        imgWrapper.style.left = (parseInt(getComputedStyle(imgWrapper).left, 10) - Math.ceil(imgWrapperWidth)) + 'px';
     };
 
     let setPrevImg = function (e) {
         if (getComputedStyle(imgWrapper).left === '0px') {
             return;
         }
-        if (parseInt(getComputedStyle(imgWrapper).left) % 500 !== 0) {
+        if (parseInt(getComputedStyle(imgWrapper).left) % 250 !== 0) {
             return;
         }
-        imgWrapper.style.left = (parseInt(getComputedStyle(imgWrapper).left, 10) + 500) + 'px';
+        imgWrapper.style.left = (parseInt(getComputedStyle(imgWrapper).left, 10) + Math.ceil(imgWrapperWidth)) + 'px';
     };
 
     dataSet();
@@ -142,7 +146,81 @@ function DropMenu(selector) {
 
 }
 
+function ImgOpenner(selector) {
+    let section = document.querySelector(selector);
 
+    let closeFull = function () {
+        let img = section.querySelector('.' + selector.slice(4).slice(0, -2) + '__img-full'),
+            overlay = section.querySelector('.' + selector.slice(4).slice(0, -2) + '__img-overlay');
+
+
+        section.removeChild(img);
+        section.removeChild(overlay);
+    };
+
+    let openFull = function (e) {
+
+        console.log(e);
+        if (e.target.classList.contains('js-img')) {
+            let elem = document.createElement('img'),
+                overlay = document.createElement('div'),
+                screenHeight = window.screen.height,
+                screenWidth = window.screen.width;
+
+            elem.src = e.target.src;
+            elem.className = selector.slice(4).slice(0, -2) + '__img-full';
+            overlay.className = selector.slice(4).slice(0, -2) + '__img-overlay';
+
+            let imgHeight = elem.naturalHeight,
+                imgWidth = elem.naturalWidth,
+                imgRatio = imgHeight / imgWidth;
+
+            if (imgHeight * 1.4 > screenHeight) {
+                if (imgWidth * 1.4 > screenWidth) {
+                    if (screenHeight * 0.95 / imgRatio > screenWidth * 0.95) {
+                        elem.style.width = screenWidth * 0.95 + 'px';
+                        elem.style.height = screenWidth * 0.95 * imgRatio + 'px';
+                    }
+                    else {
+                        elem.style.width = screenHeight * 0.95 / imgRatio + 'px';
+                        elem.style.height = screenHeight * 0.95 + 'px';
+                    }
+                }
+                else {
+                    elem.style.height = screenHeight * 0.95 + 'px';
+                    elem.style.width = screenHeight * 0.95 / imgRatio + 'px';
+                }
+            }
+            else {
+                if (imgWidth * 1.4 > screenWidth) {
+                    elem.style.width = screenWidth * 0.95 + 'px';
+                    elem.style.height = screenWidth * 0.95 * imgRatio + 'px';
+                }
+                else {
+                    elem.style.width = imgWidth * 1.4 + 'px';
+                    elem.style.height = imgHeight * 1.4 + 'px';
+                }
+            }
+
+            section.appendChild(overlay);
+            section.appendChild(elem);
+
+            elem.style.left = parseInt(getComputedStyle(elem).left, 10) - parseInt(elem.style.width, 10) / 2 + 'px';
+            elem.style.top = parseInt(getComputedStyle(elem).top, 10) - parseInt(elem.style.height, 10) / 2 + 'px';
+
+            overlay.addEventListener('click', closeFull)
+        }
+    };
+
+    section.addEventListener('click', openFull);
+
+}
+
+
+new ImgOpenner('.js-admission-1');
+new ImgOpenner('.js-galleries-1');
+new ImgOpenner('.js-galleries-2');
+new ImgOpenner('.js-galleries-3');
 
 new Gallery('.js-gallery-1');
 new Gallery('.js-gallery-2');
@@ -153,12 +231,7 @@ new GalleryForMobile('.js-gallery-2');
 new GalleryForMobile('.js-gallery-3');
 new DropMenu('.js-navigation');
 
-// if (window.matchMedia("(min-width: 768px)").matches) {
-//
-//
-// } else {
-//
-// }
+
 
 
 

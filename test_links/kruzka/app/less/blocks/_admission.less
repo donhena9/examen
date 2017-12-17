@@ -24,4 +24,31 @@
         .section-title;
     }
 
+    &__img {
+        width: 30%;
+        cursor: pointer;
+    }
+
+    &__imgs-wrapper {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    &__img-full {
+        position: fixed;
+        z-index: 20;
+        left: 50%;
+        top: 50%;
+    }
+
+    &__img-overlay {
+        z-index: 19;
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background-color: @color-bg;
+    }
 }

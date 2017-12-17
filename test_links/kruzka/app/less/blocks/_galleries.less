@@ -49,7 +49,7 @@
             align-items: center;
             border: @txt-color-main 2px solid;
             border-right: none;
-
+            background-color: darken(fade(@color-bg,100%),15%);
         }
     }
     &__icon {
@@ -145,4 +145,23 @@
             margin-right: 0;
         }
     }
+
+    &__img-full {
+        position: fixed;
+        z-index: 20;
+        left: 50%;
+        top: 50%;
+    }
+
+    &__img-overlay {
+        z-index: 19;
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background-color: @color-bg;
+    }
+
 }
+
