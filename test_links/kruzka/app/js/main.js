@@ -5,12 +5,12 @@ function Gallery(selector) {
     let galleryName = document.querySelector(selector),
         services = galleryName.querySelectorAll('.galleries__sub'),
         servicesList = services[1].parentElement,
-        galleryImgs = galleryName.querySelectorAll('.gallery__img'),
         prevImg = galleryName.querySelector('.gallery__pagination--left'),
         nextImg = galleryName.querySelector('.gallery__pagination--right'),
         imgWrapper = galleryName.querySelector('.gallery__imgs-wrapper'),
         imgWrapperWidth = Math.ceil(getComputedStyle(imgWrapper).width.slice(0,-2));
 
+    let galleryItemAmount;
 
     let dataSet = function () {
         for (let i = 0; i < services.length; i++) {
@@ -18,7 +18,22 @@ function Gallery(selector) {
         }
     };
 
+    let createImgs = function () {
+        console.log(selector.slice(12));
+        let elemArray = new Array(40);
+        for (let i = 0; i < 40; i++) {
+            elemArray[i] = document.createElement('img');
+            elemArray[i].className = 'gallery__img  js-img';
+            elemArray[i].alt='Картинка услуг';
+            elemArray[i].src='img/gallery_' + selector.slice(12) + '/gallery_1/' + (i + 1) + '.jpg';
+            imgWrapper.appendChild(elemArray[i]);
+        }
+
+    };
+
     let chooseGallery = function (e) {
+        imgWrapper.style.left = '0px';
+
         let target = e.target,
             number = e.target.dataset.number;
         if (target.tagName !== 'LI') {
@@ -29,17 +44,20 @@ function Gallery(selector) {
             services[j].classList.remove('galleries__sub--active');
         }
         target.classList.add('galleries__sub--active');
-
         for (let i = 0; i < galleryImgs.length; i++) {
-            galleryImgs[i].setAttribute('src', 'img/gallery_1/gallery_' + number + '/' + (i + 1) + '_s.jpg');
+            galleryImgs[i].setAttribute('src', 'img/gallery_' + selector.slice(12) + '/gallery_' + number + '/' + (i + 1) + '.jpg');
         }
+        galleryItemAmount = e.target.dataset.imgAmount;
     };
 
     let setNextImg = function (e) {
         if (parseInt(getComputedStyle(imgWrapper).left) % 250 !== 0) {
             return;
         }
-        if (getComputedStyle(imgWrapper).left === -imgWrapperWidth * (galleryImgs.length - 1) + 'px') {
+        console.log(galleryItemAmount);
+        // if (getComputedStyle(imgWrapper).left === -imgWrapperWidth * (galleryImgs.length - 1) + 'px') {
+        if (getComputedStyle(imgWrapper).left === -(galleryItemAmount - 1) * 500 + 'px') {
+
             return;
         }
         imgWrapper.style.left = (parseInt(getComputedStyle(imgWrapper).left, 10) - Math.ceil(imgWrapperWidth)) + 'px';
@@ -56,6 +74,10 @@ function Gallery(selector) {
     };
 
     dataSet();
+    createImgs();
+
+    let galleryImgs = galleryName.querySelectorAll('.gallery__img');
+
     servicesList.addEventListener('click', chooseGallery);
     nextImg.addEventListener('click', setNextImg);
     prevImg.addEventListener('click', setPrevImg);
@@ -159,21 +181,22 @@ function ImgOpenner(selector) {
     };
 
     let openFull = function (e) {
-
-        console.log(e);
         if (e.target.classList.contains('js-img')) {
             let elem = document.createElement('img'),
                 overlay = document.createElement('div'),
                 screenHeight = window.screen.height,
                 screenWidth = window.screen.width;
-
             elem.src = e.target.src;
+            // elem.src = e.target.src.slice(0, -6) + '.jpg';
+            console.log(elem.src);
             elem.className = selector.slice(4).slice(0, -2) + '__img-full';
             overlay.className = selector.slice(4).slice(0, -2) + '__img-overlay';
 
             let imgHeight = elem.naturalHeight,
                 imgWidth = elem.naturalWidth,
                 imgRatio = imgHeight / imgWidth;
+
+            console.log(imgHeight, imgWidth);
 
             if (imgHeight * 1.4 > screenHeight) {
                 if (imgWidth * 1.4 > screenWidth) {
