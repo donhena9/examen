@@ -8,7 +8,10 @@ function Gallery(selector) {
         prevImg = galleryName.querySelector('.gallery__pagination--left'),
         nextImg = galleryName.querySelector('.gallery__pagination--right'),
         imgWrapper = galleryName.querySelector('.gallery__imgs-wrapper'),
+        imgViewport = galleryName.querySelector('.gallery__view-port'),
+        imgViewportSize = parseInt(getComputedStyle(imgViewport).width) + 1,
         imgWrapperWidth = Math.ceil(getComputedStyle(imgWrapper).width.slice(0,-2));
+
 
     let galleryItemAmount;
 
@@ -19,7 +22,6 @@ function Gallery(selector) {
     };
 
     let createImgs = function () {
-        console.log(selector.slice(12));
         let elemArray = new Array(40);
         for (let i = 0; i < 40; i++) {
             elemArray[i] = document.createElement('img');
@@ -54,9 +56,7 @@ function Gallery(selector) {
         if (parseInt(getComputedStyle(imgWrapper).left) % 250 !== 0) {
             return;
         }
-        console.log(galleryItemAmount);
-        // if (getComputedStyle(imgWrapper).left === -imgWrapperWidth * (galleryImgs.length - 1) + 'px') {
-        if (getComputedStyle(imgWrapper).left === -(galleryItemAmount - 1) * 500 + 'px') {
+        if (getComputedStyle(imgWrapper).left === -(galleryItemAmount - 1) * imgViewportSize + 'px') {
 
             return;
         }
